@@ -1,0 +1,35 @@
+A Retrieval-Augmented Generation (RAG) system combines a large language model (LLM) with an external knowledge source to produce more informed and accurate responses.
+
+The core components of a RAG system can be broken down into two main phases: **Indexing (Offline)** and **Inference/Generation (Online)**.
+
+---
+
+### 1. Indexing (Knowledge Preparation)
+
+This phase occurs offline and prepares the external knowledge base for fast and relevant retrieval.
+
+* **📚 Data Source:** The original documents, data, or knowledge base (e.g., PDFs, databases, web pages, internal documents) that the LLM will be able to reference.
+* **✂️ Data Preprocessing & Chunking:** The raw data is cleaned and broken down into smaller, manageable pieces (chunks) suitable for the LLM's context window. Effective chunking is crucial for retrieval quality.
+* **↔️ Embedding Model (Encoder):** This model converts the text chunks into high-dimensional numerical vectors (embeddings) that capture the semantic meaning of the text.
+* **🗄️ Vector Store/Database:** A specialized database (like a vector database) is used to store and index these embeddings. It allows for efficient and fast **semantic search**—finding chunks whose vectors are mathematically "closest" to the query's vector.
+
+---
+
+### 2. Inference/Generation (Query Processing)
+
+This phase happens in real-time when a user submits a query.
+
+* **❓ User Query:** The user's input question or prompt.
+* **🔍 Retriever:**
+    * The user's query is also converted into a vector using the same **Embedding Model** from the Indexing phase.
+    * The retriever then uses this query vector to perform a **similarity search** in the **Vector Store** to find the most contextually relevant document chunks.
+* **🧩 Prompt Augmentation:** The retrieved, relevant chunks of information are combined with the original user query and structured into a new, comprehensive **prompt**. This process is often called "stuffing" the prompt with context.
+* **🧠 Large Language Model (LLM) / Generator:**
+    * The LLM (e.g., GPT-4, Claude, Gemini) receives the augmented prompt.
+    * It uses its inherent generative capabilities, grounded by the retrieved external context, to synthesize a final, coherent, and factual **Response**.
+
+In essence, RAG acts as a dynamic "lookup" tool that ensures the LLM has access to up-to-date, specific, or proprietary information, which helps mitigate hallucinations and improves factual accuracy.
+
+---
+
+**Would you like a more detailed explanation of a specific component, like how the Embedding Model works?**

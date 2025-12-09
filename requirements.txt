@@ -1,0 +1,10 @@
+streamlit
+python-dotenv
+PyPDF2
+python-docx
+langchain_text_splitters
+google-generativeai
+psycopg
+psycopg-binary
+numpy
+pgvector

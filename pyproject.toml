@@ -1,0 +1,16 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = ""
+authors = ["James Leroy Pearson Jr Srfujiautotec11@gmail.com>"]
+requires-python = ">=3.11"
+dependencies = [
+    "google-generativeai>=0.8.5",
+    "langchain-text-splitters>=1.0.0",
+    "pgvector>=0.4.1",
+    "psycopg[binary]>=3.2.12",
+    "python-dotenv>=1.0.0", 
+    "PyMuPDF>=1.24.9",
+    "python-docx>=1.2.0",
+    "streamlit>=1.51.0",
+]
