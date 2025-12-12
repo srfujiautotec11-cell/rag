@@ -29,7 +29,3 @@ This phase happens in real-time when a user submits a query.
     * It uses its inherent generative capabilities, grounded by the retrieved external context, to synthesize a final, coherent, and factual **Response**.
 
 In essence, RAG acts as a dynamic "lookup" tool that ensures the LLM has access to up-to-date, specific, or proprietary information, which helps mitigate hallucinations and improves factual accuracy.
-
----
-
-**Would you like a more detailed explanation of a specific component, like how the Embedding Model works?**
